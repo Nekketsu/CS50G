@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS50G", "CS50G\CS50G.csproj", "{876B57EF-B5C7-437C-B32A-061329399ED4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{180475F3-17A0-4553-AA8A-D56AF218FA27}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PongGame", "PongGame\PongGame.csproj", "{3F66487D-3E7C-44D7-9008-73526D60A8BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameEngine", "GameEngine\GameEngine.csproj", "{ECF86E8A-E5BC-4CF1-B3AC-A4F48F701B86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{876B57EF-B5C7-437C-B32A-061329399ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{876B57EF-B5C7-437C-B32A-061329399ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{876B57EF-B5C7-437C-B32A-061329399ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{876B57EF-B5C7-437C-B32A-061329399ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F66487D-3E7C-44D7-9008-73526D60A8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F66487D-3E7C-44D7-9008-73526D60A8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F66487D-3E7C-44D7-9008-73526D60A8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F66487D-3E7C-44D7-9008-73526D60A8BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECF86E8A-E5BC-4CF1-B3AC-A4F48F701B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF86E8A-E5BC-4CF1-B3AC-A4F48F701B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF86E8A-E5BC-4CF1-B3AC-A4F48F701B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF86E8A-E5BC-4CF1-B3AC-A4F48F701B86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3F66487D-3E7C-44D7-9008-73526D60A8BA} = {180475F3-17A0-4553-AA8A-D56AF218FA27}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C305B707-B686-4B23-92E1-C8DD970FC0D7}
+	EndGlobalSection
+EndGlobal
