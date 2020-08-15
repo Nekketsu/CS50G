@@ -13,19 +13,23 @@ namespace CS50G.GameEngine
     {
         private readonly IJSRuntime jsRuntime;
         private readonly ElementReference canvas;
+        private readonly int superSampling;
+
+        private TaskCompletionSource<Image> newImageTask;
 
         List<string> commands;
 
-        public Graphics(IJSRuntime jsRuntime, ElementReference canvas)
+        public Graphics(IJSRuntime jsRuntime, ElementReference canvas, int superSampling = 1)
         {
             this.jsRuntime = jsRuntime;
             this.canvas = canvas;
+            this.superSampling = superSampling;
             commands = new List<string>();
         }
 
         public async Task Initialize()
         {
-            await jsRuntime.InvokeVoidAsync("graphics.initialize", canvas);
+            await jsRuntime.InvokeVoidAsync("graphics.initialize", DotNetObjectReference.Create(this), canvas, superSampling); ;
         }
 
         public async Task<Font> NewFont(string fileName, int size)
@@ -105,6 +109,48 @@ namespace CS50G.GameEngine
         public void SetFont(Font font)
         {
             commands.Add($"context.font = '{font.Size}px {font.Name}'");
+        }
+
+        //public async Task<Image> NewImage(string fileName)
+        //{
+        //    var image = await jsRuntime.InvokeAsync<Image>("graphics.newImage", fileName.ToAssetUri());
+
+        //    return image;
+        //}
+
+        public async Task<Image> NewImage(string fileName)
+        {
+            newImageTask = new TaskCompletionSource<Image>();
+            await jsRuntime.InvokeVoidAsync("graphics.newImage", fileName.ToAssetUri());
+
+            return await newImageTask.Task;
+        }
+
+        [JSInvokable]
+        public void NewImageCompleted(Image image)
+        {
+            newImageTask.SetResult(image);
+        }
+
+        public void Draw(Image image, double x, double y)
+        {
+            commands.Add($"context.drawImage(graphics.images['{image.Name}'], {Math.Round(x)}, {Math.Round(y)}, {image.Width}, {image.Height});");
+        }
+
+        public void Draw(Image image, double x, double y, bool flipHorizontally, bool flipVertically)
+        {
+            if (flipHorizontally || flipVertically)
+            {
+                var scaleCommand = $"context.scale({(flipHorizontally ? -1 : 1)}, {(flipVertically ? -1 : 1)});";
+
+                commands.Add(scaleCommand);
+                Draw(image, x, -y);
+                commands.Add(scaleCommand);
+            }
+            else
+            {
+                Draw(image, x, y);
+            }
         }
     }
 }

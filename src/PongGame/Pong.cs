@@ -3,19 +3,20 @@ using GameEngine.Audio;
 using GameEngine.Graphics;
 using GameEngine.Input;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
-// Originally programmed by Atari in 1972. Features two
-// paddles, controlled by players, with the goal of getting
-// the ball past your opponent's edge. First to 10 points wins.
-
-// This version is built to more closely resemble the NES than
-// the original Pong machines or the Atari 2600 in terms of
-// resolution, though in widescreen (16:9) so it looks nicer on 
-// modern systems.
 namespace PongGame
 {
+    // Main Program
+
+    // Originally programmed by Atari in 1972. Features two
+    // paddles, controlled by players, with the goal of getting
+    // the ball past your opponent's edge. First to 10 points wins.
+
+    // This version is built to more closely resemble the NES than
+    // the original Pong machines or the Atari 2600 in terms of
+    // resolution, though in widescreen (16:9) so it looks nicer on 
+    // modern systems.
     public class Pong : Game
     {
         public static new Pong Instance { get; private set; }
@@ -35,8 +36,6 @@ namespace PongGame
         Font smallFont;
         Font largeFont;
         Font scoreFont;
-
-        Dictionary<string, ISource> sounds;
 
         Paddle player1;
         Paddle player2;
@@ -69,12 +68,9 @@ namespace PongGame
             Graphics.SetFont(smallFont);
 
             // Sounds
-            sounds = new Dictionary<string, ISource>
-            {
-                ["paddle_hit"] = await Audio.NewSource("sounds/paddle_hit.wav"),
-                ["score"] = await Audio.NewSource("sounds/score.wav"),
-                ["wall_hit"] = await Audio.NewSource("sounds/wall_hit.wav"),
-            };
+            Sounds.Add("paddle_hit", await Audio.NewSource("sounds/paddle_hit.wav"));
+            Sounds.Add("score", await Audio.NewSource("sounds/score.wav"));
+            Sounds.Add("wall_hit", await Audio.NewSource("sounds/wall_hit.wav"));
 
             // initialize our player paddles; make them global so that they can be
             // detected by other functions and modules
@@ -142,7 +138,7 @@ namespace PongGame
                             ball.Dy = random.Next(10, 150);
                         }
 
-                        await sounds["paddle_hit"].Play();
+                        await Sounds["paddle_hit"].Play();
                     }
                     if (ball.Collides(player2))
                     {
@@ -159,7 +155,7 @@ namespace PongGame
                             ball.Dy = random.Next(10, 150);
                         }
 
-                        await sounds["paddle_hit"].Play();
+                        await Sounds["paddle_hit"].Play();
                     }
 
                     // detect upper and lower screen boundary collision, playing a sound
@@ -168,7 +164,7 @@ namespace PongGame
                     {
                         ball.Y = 0;
                         ball.Dy = -ball.Dy;
-                        await sounds["wall_hit"].Play();
+                        await Sounds["wall_hit"].Play();
                     }
 
                     // -4 to account for the ball's size
@@ -176,7 +172,7 @@ namespace PongGame
                     {
                         ball.Y = VirtualHeight - 4;
                         ball.Dy = -ball.Dy;
-                        await sounds["wall_hit"].Play();
+                        await Sounds["wall_hit"].Play();
                     }
 
                     // if we reach the left edge of the screen, go back to serve
@@ -185,7 +181,7 @@ namespace PongGame
                     {
                         servingPlayer = 1;
                         player2Score++;
-                        await sounds["score"].Play();
+                        await Sounds["score"].Play();
 
                         // if we've reached a score of 10, the game is over; set the
                         // state to done so we can show the victory message
@@ -208,7 +204,7 @@ namespace PongGame
                     {
                         servingPlayer = 2;
                         player1Score++;
-                        await sounds["score"].Play();
+                        await Sounds["score"].Play();
 
                         // if we've reached a score of 10, the game is over; set the
                         // state to done so we can show the victory message

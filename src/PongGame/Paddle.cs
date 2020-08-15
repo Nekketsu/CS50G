@@ -3,6 +3,8 @@ using System;
 
 namespace PongGame
 {
+    // Paddle Class
+
     // Represents a paddle that can move up and down.Used in the main
     // program to deflect the ball back toward the opponent.
     public class Paddle

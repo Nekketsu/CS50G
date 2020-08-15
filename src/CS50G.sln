@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PongGame", "PongGame\PongGa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameEngine", "GameEngine\GameEngine.csproj", "{ECF86E8A-E5BC-4CF1-B3AC-A4F48F701B86}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiftyBirdGame", "FiftyBirdGame\FiftyBirdGame.csproj", "{F09C35DC-BF7E-4CA7-8D65-6C68629F9717}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,12 +31,17 @@ Global
 		{ECF86E8A-E5BC-4CF1-B3AC-A4F48F701B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECF86E8A-E5BC-4CF1-B3AC-A4F48F701B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECF86E8A-E5BC-4CF1-B3AC-A4F48F701B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F09C35DC-BF7E-4CA7-8D65-6C68629F9717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F09C35DC-BF7E-4CA7-8D65-6C68629F9717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F09C35DC-BF7E-4CA7-8D65-6C68629F9717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F09C35DC-BF7E-4CA7-8D65-6C68629F9717}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3F66487D-3E7C-44D7-9008-73526D60A8BA} = {180475F3-17A0-4553-AA8A-D56AF218FA27}
+		{F09C35DC-BF7E-4CA7-8D65-6C68629F9717} = {180475F3-17A0-4553-AA8A-D56AF218FA27}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C305B707-B686-4B23-92E1-C8DD970FC0D7}

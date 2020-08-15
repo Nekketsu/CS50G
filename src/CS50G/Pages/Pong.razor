@@ -2,6 +2,5 @@
 
 @inject IJSRuntime JSRuntime
 
-<canvas width="@Width" height="@Height" @ref="canvas">
-
+<canvas width="@(Width * SuperSampling)" height="@(Height * SuperSampling)" @ref="canvas" @attributes="FullScreenAttributes">
 </canvas>

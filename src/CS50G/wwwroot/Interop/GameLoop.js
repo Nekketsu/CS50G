@@ -1,16 +1,21 @@
 ﻿var gameLoop = {
     instance: null,
-
-    update: async timeSpan => {
-        await gameLoop.instance.invokeMethodAsync('Update', timeSpan);
-        window.requestAnimationFrame(gameLoop.update);
-    },
+    animation: 0,
 
     initialize: instance => {
         gameLoop.instance = instance;
-	},
+    },
 
     run: () => {
-        window.requestAnimationFrame(gameLoop.update);
-    }
+        gameLoop.animation = window.requestAnimationFrame(gameLoop.update);
+    },
+
+    update: timeSpan => {
+        gameLoop.animation = window.requestAnimationFrame(gameLoop.update);
+        gameLoop.instance.invokeMethodAsync('Update', timeSpan);
+    },
+
+    stop: () => {
+        window.cancelAnimationFrame(gameLoop.animation);
+	}
 }

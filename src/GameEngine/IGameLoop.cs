@@ -9,5 +9,6 @@ namespace GameEngine
 
         Task Initialize();
         Task Run();
+        Task Stop();
     }
 }

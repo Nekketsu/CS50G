@@ -33,6 +33,7 @@ namespace CS50G.GameEngine
             {
                 ["Enter"] = Key.Enter,
                 ["NumpadEnter"] = Key.Return,
+                ["Space"] = Key.Space,
                 ["Escape"] = Key.Escape,
                 ["ArrowUp"] = Key.Up,
                 ["ArrowDown"] = Key.Down,
@@ -72,6 +73,11 @@ namespace CS50G.GameEngine
             }
 
             await Task.CompletedTask;
+        }
+
+        public async Task DisposeAsync()
+        {
+            await jsRuntime.InvokeVoidAsync("keyboard.dispose");
         }
     }
 }

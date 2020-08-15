@@ -28,6 +28,11 @@ namespace CS50G.GameEngine
             await jsRuntime.InvokeVoidAsync("gameLoop.run");
         }
 
+        public async Task Stop()
+        {
+            await jsRuntime.InvokeVoidAsync("gameLoop.stop");
+        }
+
         [JSInvokable]
         public void Update(float time)
         {

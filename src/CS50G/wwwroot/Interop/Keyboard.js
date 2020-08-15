@@ -6,12 +6,20 @@
         keyboard.instance = instance;
         keyboard.canvas = canvas;
 
-        window.addEventListener("keydown", e => {
-            keyboard.instance.invokeMethodAsync('OnKeyDown', e.code);
-        });
+        window.addEventListener("keydown", keyboard.onKeyDown);
+        window.addEventListener("keyup", keyboard.onKeyUp);
+    },
 
-        window.addEventListener("keyup", e => {
-            keyboard.instance.invokeMethodAsync('OnKeyUp', e.code);
-        });
+    dispose: () => {
+        window.removeEventListener("keydown", keyboard.onKeyDown);
+        window.removeEventListener("keyup", keyboard.onKeyUp);
+    },
+
+    onKeyDown: e => {
+        keyboard.instance.invokeMethodAsync('OnKeyDown', e.code);
+    },
+
+    onKeyUp: e => {
+        keyboard.instance.invokeMethodAsync('OnKeyUp', e.code);
     }
 }

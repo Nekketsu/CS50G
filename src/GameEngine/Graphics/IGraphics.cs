@@ -10,6 +10,7 @@ namespace GameEngine.Graphics
         void Begin();
         Task Apply();
         void SetFont(Font font);
+        Task<Image> NewImage(string fileName);
         void SetColor(int red, int green, int blue);
         void SetColor(int red, int green, int blue, int alpha);
         void Clear(int red, int green, int blue);
@@ -18,5 +19,7 @@ namespace GameEngine.Graphics
         void Print(string text, int x, int y, int limit, Alignment alignment);
         void Rectangle(DrawMode mode, int x, int y, int width, int height);
         void Rectangle(DrawMode mode, double x, double y, double width, double height);
+        void Draw(Image image, double x, double y);
+        void Draw(Image image, double x, double y, bool flipHorizontally, bool flipVertically);
     }
 }

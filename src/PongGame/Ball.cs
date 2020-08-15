@@ -3,6 +3,8 @@ using System;
 
 namespace PongGame
 {
+    // Ball Class
+
     // Represents a ball which will bounce back and forth between paddles
     // and walls until it passes a left or right boundary of the screen,
     // scoring a point for the opponent.
@@ -52,8 +54,8 @@ namespace PongGame
 
         public void Update(TimeSpan dt)
         {
-            X = X + Dx * dt.TotalSeconds;
-            Y = Y + Dy * dt.TotalSeconds;
+            X += Dx * dt.TotalSeconds;
+            Y += Dy * dt.TotalSeconds;
         }
 
         public void Render()

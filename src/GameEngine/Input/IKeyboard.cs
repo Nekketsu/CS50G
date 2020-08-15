@@ -8,7 +8,7 @@ namespace GameEngine.Input
         event EventHandler<Key> KeyPressed;
 
         Task Initialize();
-
         bool IsDown(Key key);
+        Task DisposeAsync();
     }
 }
