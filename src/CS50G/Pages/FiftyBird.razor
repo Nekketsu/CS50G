@@ -1,6 +1,10 @@
 ﻿@page "/FiftyBird"
 
-@inject IJSRuntime JSRuntime
+@*<Game Name="FiftyBird"></Game>*@
 
-<canvas width="@(Width * SuperSampling)" height="@(Height * SuperSampling)" @ref="canvas" @attributes="FullScreenAttributes">
-</canvas>
+<Game Type="@Type"></Game>
+
+@code
+{
+    public Type Type { get; set; } = typeof(FiftyBirdGame.FiftyBird);
+}

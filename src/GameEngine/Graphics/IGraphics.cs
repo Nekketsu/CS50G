@@ -21,5 +21,8 @@ namespace GameEngine.Graphics
         void Rectangle(DrawMode mode, double x, double y, double width, double height);
         void Draw(Image image, double x, double y);
         void Draw(Image image, double x, double y, bool flipHorizontally, bool flipVertically);
+        Quad NewQuad(int x, int y, int width, int height, int referenceImageWidth, int referencImageHeight);
+        void Draw(Image image, double x, double y, double scaleX, double scaleY);
+        void Draw(Image image, Quad quad, double x, double y);
     }
 }

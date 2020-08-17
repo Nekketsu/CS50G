@@ -1,0 +1,9 @@
+﻿@page "/Breakout"
+
+@*<Game Name="Breakout"></Game>*@
+<Game Type="@Type"></Game>
+
+@code
+{
+    public Type Type { get; set; } = typeof(BreakoutGame.Breakout);
+}

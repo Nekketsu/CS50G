@@ -20,10 +20,12 @@ namespace GameEngine
         public IAudio Audio { get; }
         public IKeyboard Keyboard { get; }
         public IMouse Mouse { get; }
+        public IFileSystem FileSystem { get; }
 
         public Dictionary<string, ISource> Sounds { get; }
+        public Random Random { get; set; }
 
-        protected Game(string gameName, IGameLoop gameLoop, IGraphics graphics, IAudio audio, IKeyboard keyboard, IMouse mouse = null)
+        protected Game(string gameName, IGameLoop gameLoop, IGraphics graphics, IAudio audio, IKeyboard keyboard, IMouse mouse = null, IFileSystem fileSystem = null)
         {
             GameName = gameName;
             this.gameLoop = gameLoop;
@@ -31,7 +33,10 @@ namespace GameEngine
             Audio = audio;
             Keyboard = keyboard;
             Mouse = mouse;
+            FileSystem = fileSystem;
+
             Sounds = new Dictionary<string, ISource>();
+            Random = new Random();
 
             Instance = this;
         }

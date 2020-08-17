@@ -35,7 +35,9 @@ namespace CS50G.GameEngine
                 ["NumpadEnter"] = Key.Return,
                 ["Space"] = Key.Space,
                 ["Escape"] = Key.Escape,
+                ["ArrowLeft"] = Key.Left,
                 ["ArrowUp"] = Key.Up,
+                ["ArrowRight"] = Key.Right,
                 ["ArrowDown"] = Key.Down,
                 ["KeyW"] = Key.W,
                 ["KeyS"] = Key.S

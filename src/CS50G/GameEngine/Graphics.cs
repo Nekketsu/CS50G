@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -19,12 +20,16 @@ namespace CS50G.GameEngine
 
         List<string> commands;
 
+        CultureInfo enUsCultureInfo;
+
         public Graphics(IJSRuntime jsRuntime, ElementReference canvas, int superSampling = 1)
         {
             this.jsRuntime = jsRuntime;
             this.canvas = canvas;
             this.superSampling = superSampling;
             commands = new List<string>();
+
+            enUsCultureInfo = new CultureInfo("en-us");
         }
 
         public async Task Initialize()
@@ -74,7 +79,7 @@ namespace CS50G.GameEngine
             {
                 Alignment.Left => x,
                 Alignment.Center => (x + limit) / 2,
-                Alignment.Right => limit,
+                Alignment.Right => x + limit,
                 _ => throw new NotImplementedException()
             };
 
@@ -141,16 +146,31 @@ namespace CS50G.GameEngine
         {
             if (flipHorizontally || flipVertically)
             {
-                var scaleCommand = $"context.scale({(flipHorizontally ? -1 : 1)}, {(flipVertically ? -1 : 1)});";
-
-                commands.Add(scaleCommand);
-                Draw(image, x, -y);
-                commands.Add(scaleCommand);
+                var scaleX = flipHorizontally ? -1 : 1;
+                var scaleY = flipVertically ? -1 : 1;
+                Draw(image, x, y, scaleX, scaleY);
             }
             else
             {
                 Draw(image, x, y);
             }
+        }
+
+        public Quad NewQuad(int x, int y, int width, int height, int referenceImageWidth, int referencImageHeight)
+        {
+            return new Quad(x, y, width, height, referenceImageWidth, referencImageHeight);
+        }
+
+        public void Draw(Image image, double x, double y, double scaleX, double scaleY)
+        {
+            commands.Add($"context.scale({scaleX.ToString(enUsCultureInfo)}, {scaleY.ToString(enUsCultureInfo)});");
+            Draw(image, x * scaleX, y * scaleY);
+            commands.Add($"context.scale({(1 / scaleX).ToString(enUsCultureInfo)}, {(1 / scaleY).ToString(enUsCultureInfo)});");
+        }
+
+        public void Draw(Image image, Quad quad, double x, double y)
+        {
+            commands.Add($"context.drawImage(graphics.images['{image.Name}'], {quad.X}, {quad.Y}, {quad.Width}, {quad.Height}, {Math.Round(x)}, {Math.Round(y)}, {quad.Width}, {quad.Height});");
         }
     }
 }

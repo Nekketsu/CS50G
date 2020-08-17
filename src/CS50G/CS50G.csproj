@@ -14,16 +14,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FiftyBirdGame\FiftyBirdGame.csproj" />
-    <ProjectReference Include="..\PongGame\PongGame.csproj" />
+    <ProjectReference Include="..\Games\PongGame\PongGame.csproj" />
+    <ProjectReference Include="..\Games\FiftyBirdGame\FiftyBirdGame.csproj" />
+    <ProjectReference Include="..\Games\BreakoutGame\BreakoutGame.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\Assets\FiftyBird\" />
+    <Folder Include="wwwroot\Assets\Index\" />
   </ItemGroup>
 
 </Project>
