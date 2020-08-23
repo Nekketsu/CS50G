@@ -47,7 +47,7 @@ namespace CS50G.Components
             var game = gameService.CreateGame(Type, gameLoop, graphics, audio, keyboard, mouse, fileSystem);
             //var game = gameService.CreateGame(Name, gameLoop, graphics, audio, keyboard, mouse, fileSystem);
 
-            game.Keyboard.KeyPressed += Keyboard_KeyPressed;
+            game.Keyboard.KeyPressed += OnKeyPressed;
 
             Width = game.VirtualWidth;
             Height = game.VirtualHeight;
@@ -57,23 +57,11 @@ namespace CS50G.Components
             await game.Run();
         }
 
-        private void Keyboard_KeyPressed(object sender, Key e)
+        private void OnKeyPressed(object sender, Key e)
         {
             if (e == Key.Escape)
             {
-                if (!isFullScreen)
-                {
-                    isFullScreen = true;
-                    FullScreenAttributes = new Dictionary<string, object>
-                    {
-                        ["style"] = "position: absolute; top: 0; left: 0"
-                    };
-                }
-                else
-                {
-                    isFullScreen = false;
-                    FullScreenAttributes = null;
-                }
+                isFullScreen = !isFullScreen;
 
                 StateHasChanged();
             }
@@ -81,7 +69,7 @@ namespace CS50G.Components
 
         public void Dispose()
         {
-            gameService.Instance.Keyboard.KeyPressed -= Keyboard_KeyPressed;
+            gameService.Instance.Keyboard.KeyPressed -= OnKeyPressed;
         }
     }
 }

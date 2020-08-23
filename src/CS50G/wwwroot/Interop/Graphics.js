@@ -27,7 +27,8 @@
 		eval(command);
     },
 
-    wrapText: (context, text, x, y, maxWidth, lineHeight) => {
+    wrapText: (context, text, x, y, maxWidth/*, lineHeight*/) => {
+        let lineHeight = parseInt(context.font.split("px")[0]);
         let words = text.split(' ');
         let line = '';
 
@@ -36,7 +37,7 @@
             var metrics = context.measureText(testLine);
             var testWidth = metrics.width;
             if (testWidth > maxWidth && n > 0) {
-                context.fillText(line, x, y);
+                context.fillText(line.trim(), x, y);
                 line = words[n] + ' ';
                 y += lineHeight;
             }
@@ -44,7 +45,7 @@
                 line = testLine;
             }
         }
-        context.fillText(line, x, y);
+        context.fillText(line.trim(), x, y);
     },
 
     //newImage: async source => {
@@ -70,15 +71,31 @@
         let image;
         if (!graphics.images.hasOwnProperty(source)) {
             image = new Image();
-            image.onload = () => graphics.instance.invokeMethodAsync('NewImageCompleted', { name: source, width: image.naturalWidth, height: image.naturalHeight });
+            image.onload = () => {
+                graphics.images[source] = image;
+                graphics.instance.invokeMethodAsync('NewImageCompleted', { name: source, width: image.naturalWidth, height: image.naturalHeight });
+            }
             image.onerror = () => graphics.instance.invokeMethodAsync('NewImageCompleted', null);
             image.src = source;
 
-            graphics.images[source] = image;
+            
         }
         else {
             image = graphics.images[source];
             graphics.instance.invokeMethodAsync('NewImageCompleted', { name: source, width: image.naturalWidth, height: image.naturalHeight });
         }
-    }
+    },
+
+    roundRect: (context, x, y, width, height, radius) => {
+        if(width < 2 * radius) radius = width / 2;
+        if (height < 2 * radius) radius = height / 2;
+
+        context.beginPath();
+        context.moveTo(x + radius, y);
+        context.arcTo(x + width, y, x + width, y + height, radius);
+        context.arcTo(x + width, y + height, x, y + height, radius);
+        context.arcTo(x, y + height, x, y, radius);
+        context.arcTo(x, y, x + width, y, radius);
+        context.closePath();
+	}
 }

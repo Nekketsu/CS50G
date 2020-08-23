@@ -96,7 +96,7 @@ namespace BreakoutGame
                 ["main"] = await Graphics.NewImage("graphics/breakout.png"),
                 ["arrows"] = await Graphics.NewImage("graphics/arrows.png"),
                 ["hearts"] = await Graphics.NewImage("graphics/hearts.png"),
-                ["particle"] = await Graphics.NewImage("graphics/particle.png"),
+                ["particle"] = await Graphics.NewImage("graphics/particle.png")
             };
 
             // Quads we will generate for all of our textures; Quads allow us
@@ -108,7 +108,7 @@ namespace BreakoutGame
                 ["paddles"] = util.GenerateQuadsPaddles(Textures["main"]),
                 ["balls"] = util.GenerateQuadsBalls(Textures["main"]),
                 ["bricks"] = util.GenerateQuadsBricks(Textures["main"]),
-                ["hearts"] = util.GenerateQuads(Textures["hearts"], 10, 9),
+                ["hearts"] = util.GenerateQuads(Textures["hearts"], 10, 9)
             };
 
             // set up our sound effects; later, we can just index this table and

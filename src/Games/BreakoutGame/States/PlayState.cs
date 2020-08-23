@@ -75,7 +75,7 @@ namespace BreakoutGame.States
                 // tweak angle of bounce based on where it hits the paddle
 
                 // if we hit the paddle on its left side while moving left...
-                if (ball.X < paddle.X + (paddle.Width / 2) && paddle.X < 0)
+                if (ball.X < paddle.X + (paddle.Width / 2) && paddle.Dx < 0)
                 {
                     ball.Dx = -50 - (8 * (paddle.X + paddle.Width / 2 - ball.X));
                 }

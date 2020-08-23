@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiftyBirdGame", "Games\Fift
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BreakoutGame", "Games\BreakoutGame\BreakoutGame.csproj", "{0E424673-326E-43C8-BEA5-7707CD403F34}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Match3Game", "Games\Match3Game\Match3Game.csproj", "{97F90CAC-A99A-4DEA-B447-64D03F053364}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{0E424673-326E-43C8-BEA5-7707CD403F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E424673-326E-43C8-BEA5-7707CD403F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E424673-326E-43C8-BEA5-7707CD403F34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97F90CAC-A99A-4DEA-B447-64D03F053364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F90CAC-A99A-4DEA-B447-64D03F053364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F90CAC-A99A-4DEA-B447-64D03F053364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F90CAC-A99A-4DEA-B447-64D03F053364}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +55,7 @@ Global
 		{97D49C1D-2CF5-4132-97D9-B309F4FBE66D} = {180475F3-17A0-4553-AA8A-D56AF218FA27}
 		{2040DC1A-98BA-45A9-9B9A-BE8369685A26} = {180475F3-17A0-4553-AA8A-D56AF218FA27}
 		{0E424673-326E-43C8-BEA5-7707CD403F34} = {180475F3-17A0-4553-AA8A-D56AF218FA27}
+		{97F90CAC-A99A-4DEA-B447-64D03F053364} = {180475F3-17A0-4553-AA8A-D56AF218FA27}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C305B707-B686-4B23-92E1-C8DD970FC0D7}

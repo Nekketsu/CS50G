@@ -78,14 +78,14 @@ namespace CS50G.GameEngine
             var positionX = alignment switch
             {
                 Alignment.Left => x,
-                Alignment.Center => (x + limit) / 2,
+                Alignment.Center => x + limit / 2,
                 Alignment.Right => x + limit,
                 _ => throw new NotImplementedException()
             };
 
             commands.Add($"context.textAlign = '{alignment.ToString().ToLower()}';");
-            //commands.Add($"graphics.wrapText(context, '{text}', {positionX}, {y}, {limit});");
-            commands.Add($"context.fillText('{text}', {positionX}, {y});");
+            commands.Add($"graphics.wrapText(context, '{text}', {positionX}, {y}, {limit});");
+            //commands.Add($"context.fillText('{text}', {positionX}, {y});");
         }
 
         public void Rectangle(DrawMode mode, int x, int y, int width, int height)
@@ -104,11 +104,14 @@ namespace CS50G.GameEngine
         public void SetColor(int red, int green, int blue)
         {
             commands.Add($"context.fillStyle = 'rgb({red}, {green}, {blue})';");
+            commands.Add($"context.strokeStyle = 'rgb({red}, {green}, {blue})';");
         }
 
         public void SetColor(int red, int green, int blue, int alpha)
         {
-            commands.Add($"context.fillStyle = 'rgba({red}, {green}, {blue}, {alpha})';");
+            var doubleAlpha = (alpha / 255.0).ToString(enUsCultureInfo);
+            commands.Add($"context.fillStyle = 'rgba({red}, {green}, {blue}, {doubleAlpha})';");
+            commands.Add($"context.strokeStyle = 'rgba({red}, {green}, {blue}, {doubleAlpha})';");
         }
 
         public void SetFont(Font font)
@@ -171,6 +174,19 @@ namespace CS50G.GameEngine
         public void Draw(Image image, Quad quad, double x, double y)
         {
             commands.Add($"context.drawImage(graphics.images['{image.Name}'], {quad.X}, {quad.Y}, {quad.Width}, {quad.Height}, {Math.Round(x)}, {Math.Round(y)}, {quad.Width}, {quad.Height});");
+        }
+
+        public void SetLineWidth(int lineWidth)
+        {
+            commands.Add($"context.lineWidth = {lineWidth}");
+        }
+
+        public void Rectangle(DrawMode mode, int x, int y, int width, int height, int radius)
+        {
+            commands.Add("context.beginPath();");
+            commands.Add($"graphics.roundRect(context, {x}, {y}, {width}, {height}, {radius});");
+            var drawMethod = mode == DrawMode.Fill ? "fill" : "stroke";
+            commands.Add($"context.{drawMethod}();");
         }
     }
 }

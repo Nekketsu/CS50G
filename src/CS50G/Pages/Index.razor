@@ -1,19 +1,15 @@
 ﻿@page "/"
 
-<ul class="snapshots">
-    <li>
-        <NavLink class="nav-link" href="Pong">
-            <img src="Assets/Index/Pong.png" alt="Pong" />
-        </NavLink>
-    </li>
-    <li>
-        <NavLink class="nav-link" href="FiftyBird">
-            <img src="Assets/Index/FiftyBird.png" alt="Fifty Bird" />
-        </NavLink>
-    </li>
-    <li>
-        <NavLink class="nav-link" href="Breakout">
-            <img src="Assets/Index/Breakout.png" alt="Breakout" />
-        </NavLink>
-    </li>
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
+<ul class="snapshots" @ref="list">
+    @foreach (var game in Games)
+    {
+        <li class="@(SelectedGame == game ? "selected" : null)" @onmouseover="e => OnFocus(game)">
+            <NavLink class="nav-link" href="@game">
+                <img src="Assets/Index/@(game).png" alt="@game" />
+            </NavLink>
+        </li>
+    }
 </ul>

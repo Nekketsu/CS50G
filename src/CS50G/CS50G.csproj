@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Games\Match3Game\Match3Game.csproj" />
     <ProjectReference Include="..\Games\PongGame\PongGame.csproj" />
     <ProjectReference Include="..\Games\FiftyBirdGame\FiftyBirdGame.csproj" />
     <ProjectReference Include="..\Games\BreakoutGame\BreakoutGame.csproj" />
@@ -21,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Assets\Index\" />
+    <Folder Include="wwwroot\Assets\Match3\" />
   </ItemGroup>
 
 </Project>

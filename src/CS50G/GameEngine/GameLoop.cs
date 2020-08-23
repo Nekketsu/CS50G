@@ -36,6 +36,7 @@ namespace CS50G.GameEngine
         [JSInvokable]
         public void Update(float time)
         {
+            //BeginGameState.Log($"Update: {time}");
             var elapsedTime = TimeSpan.FromMilliseconds(time - totalTime);
             totalTime = time;
 

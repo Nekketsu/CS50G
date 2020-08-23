@@ -24,5 +24,7 @@ namespace GameEngine.Graphics
         Quad NewQuad(int x, int y, int width, int height, int referenceImageWidth, int referencImageHeight);
         void Draw(Image image, double x, double y, double scaleX, double scaleY);
         void Draw(Image image, Quad quad, double x, double y);
+        void SetLineWidth(int lineWidth);
+        void Rectangle(DrawMode mode, int x, int y, int width, int height, int radius);
     }
 }

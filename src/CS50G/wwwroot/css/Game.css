@@ -1,5 +1,4 @@
-﻿
-body {
+﻿body {
     height: 100%;
 }
 
@@ -14,6 +13,12 @@ canvas {
     image-rendering: pixelated;
 }
 
+canvas.fullscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 ul.snapshots {
     display: grid;
     list-style: none;
@@ -23,6 +28,10 @@ ul.snapshots {
 
 ul.snapshots li {
     display: inline-block;
+}
+
+ul.snapshots li.selected {
+    border: 5px solid blue;
 }
 
 ul.snapshots img {
