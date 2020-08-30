@@ -10,6 +10,7 @@ namespace CS50G.GameEngine
         private readonly string fileName;
 
         public bool Looping { get; set; }
+        public double Volume { get; set; }
 
         public Source(IJSRuntime jsRuntime, string fileName)
         {
@@ -17,11 +18,12 @@ namespace CS50G.GameEngine
             this.fileName = fileName;
 
             Looping = false;
+            Volume = 1;
         }
 
         public async Task Play()
         {
-            await jsRuntime.InvokeVoidAsync("audio.play", fileName.ToAssetUri(), Looping);
+            await jsRuntime.InvokeVoidAsync("audio.play", fileName.ToAssetUri(), Looping, Volume);
         }
 
         public async Task Pause()

@@ -23,7 +23,8 @@ namespace CS50G.Pages
                 nameof(Pong),
                 nameof(FiftyBird),
                 nameof(Breakout),
-                nameof(Match3)
+                nameof(Match3),
+                nameof(Super50Bros)
             };
 
             SelectedGame = Games.First();

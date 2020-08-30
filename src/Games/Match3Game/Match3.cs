@@ -3,7 +3,7 @@ using GameEngine.Audio;
 using GameEngine.Graphics;
 using GameEngine.Input;
 using GameEngine.States;
-using Match3Game.Services;
+using GameEngine.Timers;
 using Match3Game.States;
 using System;
 using System.Collections.Generic;

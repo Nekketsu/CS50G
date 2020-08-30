@@ -21,10 +21,15 @@ namespace GameEngine.Graphics
         void Rectangle(DrawMode mode, double x, double y, double width, double height);
         void Draw(Image image, double x, double y);
         void Draw(Image image, double x, double y, bool flipHorizontally, bool flipVertically);
-        Quad NewQuad(int x, int y, int width, int height, int referenceImageWidth, int referencImageHeight);
         void Draw(Image image, double x, double y, double scaleX, double scaleY);
+        Quad NewQuad(int x, int y, int width, int height, int referenceImageWidth, int referencImageHeight);
         void Draw(Image image, Quad quad, double x, double y);
+        void Draw(Image image, Quad quad, double x, double y, double scaleX, double scaleY);
         void SetLineWidth(int lineWidth);
         void Rectangle(DrawMode mode, int x, int y, int width, int height, int radius);
+        void Draw(Image image, Quad quad, double x, double y, bool flipHorizontally, bool flipVertically, int offsetX, int offsetY);
+        void Translate(int x, int y);
+        void Push();
+        void Pop();
     }
 }

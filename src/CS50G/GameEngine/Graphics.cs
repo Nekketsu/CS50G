@@ -176,6 +176,13 @@ namespace CS50G.GameEngine
             commands.Add($"context.drawImage(graphics.images['{image.Name}'], {quad.X}, {quad.Y}, {quad.Width}, {quad.Height}, {Math.Round(x)}, {Math.Round(y)}, {quad.Width}, {quad.Height});");
         }
 
+        public void Draw(Image image, Quad quad, double x, double y, double scaleX, double scaleY)
+        {
+            commands.Add($"context.scale({scaleX.ToString(enUsCultureInfo)}, {scaleY.ToString(enUsCultureInfo)});");
+            Draw(image, quad, x * scaleX, y * scaleY);
+            commands.Add($"context.scale({(1 / scaleX).ToString(enUsCultureInfo)}, {(1 / scaleY).ToString(enUsCultureInfo)});");
+        }
+
         public void SetLineWidth(int lineWidth)
         {
             commands.Add($"context.lineWidth = {lineWidth}");
@@ -187,6 +194,38 @@ namespace CS50G.GameEngine
             commands.Add($"graphics.roundRect(context, {x}, {y}, {width}, {height}, {radius});");
             var drawMethod = mode == DrawMode.Fill ? "fill" : "stroke";
             commands.Add($"context.{drawMethod}();");
+        }
+
+        public void Draw(Image image, Quad quad, double x, double y, bool flipHorizontally, bool flipVertically, int offsetX, int offsetY)
+        {
+            if (flipHorizontally || flipVertically)
+            {
+                var scaleX = flipHorizontally ? -1 : 1;
+                var scaleY = flipVertically ? -1 : 1;
+
+                commands.Add($"context.scale({scaleX.ToString(enUsCultureInfo)}, {scaleY.ToString(enUsCultureInfo)});");
+                Draw(image, quad, x * scaleX - offsetX, y * scaleY - offsetY);
+                commands.Add($"context.scale({(1 / scaleX).ToString(enUsCultureInfo)}, {(1 / scaleY).ToString(enUsCultureInfo)});");
+            }
+            else
+            {
+                Draw(image, quad, x - offsetX, y - offsetY);
+            }
+        }
+
+        public void Translate(int x, int y)
+        {
+            commands.Add($"context.translate({x}, {y});");
+        }
+
+        public void Push()
+        {
+            commands.Add("context.save();");
+        }
+
+        public void Pop()
+        {
+            commands.Add("context.restore();");
         }
     }
 }

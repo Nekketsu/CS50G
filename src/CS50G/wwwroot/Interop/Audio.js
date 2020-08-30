@@ -11,19 +11,24 @@
             document.body.appendChild(this.sound);
         }
 
-        play = loop => {
+        play = (loop, volume) => {
             this.sound.loop = loop;
+            this.sound.volume = volume;
             this.sound.play();
         }
 
         pause = () => {
             this.sound.pause();
             this.sound.currentTime = 0;
-		}
+        }
 
         stop = () => {
             this.sound.pause();
         }
+
+        setVolume = volume => {
+            this.sound.volume = volume;
+		}
     },
 
     loadSound: source => {
@@ -33,8 +38,8 @@
         }
     },
 
-    play: (source, loop) => {
-        audio.sounds[source].play(loop);
+    play: (source, loop, volume) => {
+        audio.sounds[source].play(loop, volume);
     },
 
     pause: source => {
@@ -43,5 +48,5 @@
 
     stop: source => {
         audio.sounds[source].pause();
-	}
+    }
 }
