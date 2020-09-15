@@ -40,18 +40,18 @@ namespace Super50BrosGame
             }
         }
 
-        public void Render()
+        public void Render(int camX = 0, int camY = 0)
         {
-            TileMap.Render();
+            TileMap.Render(camX, camY);
 
             foreach (var @object in Objects)
             {
-                @object.Render();
+                @object.Render(camX, camY);
             }
 
             foreach (var entity in Entities)
             {
-                entity.Render();
+                entity.Render(camX, camY);
             }
         }
     }

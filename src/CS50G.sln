@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BreakoutGame", "Games\Break
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Match3Game", "Games\Match3Game\Match3Game.csproj", "{97F90CAC-A99A-4DEA-B447-64D03F053364}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Super50BrosGame", "Games\Super50BrosGame\Super50BrosGame.csproj", "{28934DE9-3F0D-4CD4-B957-890CA69A937A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Super50BrosGame", "Games\Super50BrosGame\Super50BrosGame.csproj", "{28934DE9-3F0D-4CD4-B957-890CA69A937A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegendOf50Game", "LegendOf50Game\LegendOf50Game.csproj", "{7A357FBE-22AF-4E96-9A79-0D6AF3CBC044}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{28934DE9-3F0D-4CD4-B957-890CA69A937A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28934DE9-3F0D-4CD4-B957-890CA69A937A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28934DE9-3F0D-4CD4-B957-890CA69A937A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A357FBE-22AF-4E96-9A79-0D6AF3CBC044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A357FBE-22AF-4E96-9A79-0D6AF3CBC044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A357FBE-22AF-4E96-9A79-0D6AF3CBC044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A357FBE-22AF-4E96-9A79-0D6AF3CBC044}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{0E424673-326E-43C8-BEA5-7707CD403F34} = {180475F3-17A0-4553-AA8A-D56AF218FA27}
 		{97F90CAC-A99A-4DEA-B447-64D03F053364} = {180475F3-17A0-4553-AA8A-D56AF218FA27}
 		{28934DE9-3F0D-4CD4-B957-890CA69A937A} = {180475F3-17A0-4553-AA8A-D56AF218FA27}
+		{7A357FBE-22AF-4E96-9A79-0D6AF3CBC044} = {180475F3-17A0-4553-AA8A-D56AF218FA27}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C305B707-B686-4B23-92E1-C8DD970FC0D7}

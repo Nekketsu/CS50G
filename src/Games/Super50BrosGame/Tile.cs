@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using GameEngine;
+using System.Linq;
 
 namespace Super50BrosGame
 {
@@ -36,16 +37,22 @@ namespace Super50BrosGame
             return Super50Bros.Instance.CollidableTiles.Contains(Id);
         }
 
-        public void Render()
+        public void Render(int camX, int camY)
         {
-            Super50Bros.Instance.Graphics.Draw(Super50Bros.Instance.Textures["tiles"], Super50Bros.Instance.FrameSets["tilesets"][Tileset][Id],
-                X * Super50Bros.Instance.TileSize, Y * Super50Bros.Instance.TileSize);
+            var tileBox = new Box(X * Super50Bros.Instance.TileSize, Y * Super50Bros.Instance.TileSize, Super50Bros.Instance.TileSize, Super50Bros.Instance.TileSize);
+            var screenBox = new Box(camX, camY, Super50Bros.Instance.VirtualWidth, Super50Bros.Instance.VirtualHeight);
 
-            // tile top layer for graphical variety
-            if (Topper == true)
+            if (tileBox.Intersect(screenBox))
             {
-                Super50Bros.Instance.Graphics.Draw(Super50Bros.Instance.Textures["toppers"], Super50Bros.Instance.FrameSets["toppersets"][Topperset][Id],
+                Super50Bros.Instance.Graphics.Draw(Super50Bros.Instance.Textures["tiles"], Super50Bros.Instance.FrameSets["tilesets"][Tileset][Id],
                     X * Super50Bros.Instance.TileSize, Y * Super50Bros.Instance.TileSize);
+
+                // tile top layer for graphical variety
+                if (Topper == true)
+                {
+                    Super50Bros.Instance.Graphics.Draw(Super50Bros.Instance.Textures["toppers"], Super50Bros.Instance.FrameSets["toppersets"][Topperset][Id],
+                        X * Super50Bros.Instance.TileSize, Y * Super50Bros.Instance.TileSize);
+                }
             }
         }
     }

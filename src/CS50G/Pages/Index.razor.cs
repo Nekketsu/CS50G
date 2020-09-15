@@ -24,7 +24,8 @@ namespace CS50G.Pages
                 nameof(FiftyBird),
                 nameof(Breakout),
                 nameof(Match3),
-                nameof(Super50Bros)
+                nameof(Super50Bros),
+                nameof(LegendOf50)
             };
 
             SelectedGame = Games.First();

@@ -36,7 +36,7 @@ namespace Super50BrosGame.States.Game
 
             Player = new Player(
                 0, 0,
-                16, 16,
+                16, 20,
                 "green-alien",
                 null,
                 TileMap,
@@ -91,9 +91,9 @@ namespace Super50BrosGame.States.Game
             // translate the entire view of the scene to emulate a camera
             Super50Bros.Instance.Graphics.Translate((int)-Math.Floor(CamX), (int)-Math.Floor(CamY));
 
-            Level.Render();
+            Level.Render((int)CamX, (int)CamY);
 
-            Player.Render();
+            Player.Render((int)CamX, (int)CamY);
             Super50Bros.Instance.Graphics.Pop();
 
             // render score

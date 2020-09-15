@@ -19,11 +19,13 @@
     <ProjectReference Include="..\Games\FiftyBirdGame\FiftyBirdGame.csproj" />
     <ProjectReference Include="..\Games\BreakoutGame\BreakoutGame.csproj" />
     <ProjectReference Include="..\Games\Super50BrosGame\Super50BrosGame.csproj" />
+    <ProjectReference Include="..\LegendOf50Game\LegendOf50Game.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\Assets\Index\" />
     <Folder Include="wwwroot\Assets\Match3\" />
+    <Folder Include="wwwroot\Assets\LegendOf50\" />
     <Folder Include="wwwroot\Assets\Super50Bros\" />
   </ItemGroup>
 

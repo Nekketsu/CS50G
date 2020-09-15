@@ -79,5 +79,11 @@ namespace GameEngine.States
                 await current.Render();
             }
         }
+
+        // Used for states that can be controlled by the AI to influence update logic.
+        public async Task ProcessAI(Dictionary<string, object> parameters, TimeSpan dt)
+        {
+            await current.ProcessAI(parameters, dt);
+        }
     }
 }

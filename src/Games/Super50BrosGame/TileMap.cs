@@ -41,13 +41,13 @@ namespace Super50BrosGame
             return Tiles[(int)(y / Super50Bros.Instance.TileSize), (int)(x / Super50Bros.Instance.TileSize)];
         }
 
-        public void Render()
+        public void Render(int camX, int camY)
         {
             for (var y = 0; y < Height; y++)
             {
                 for (var x = 0; x < Width; x++)
                 {
-                    Tiles[y, x].Render();
+                    Tiles[y, x].Render(camX, camY);
                 }
             }
         }

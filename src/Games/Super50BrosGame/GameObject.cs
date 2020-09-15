@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameEngine;
+using System;
 using System.Threading.Tasks;
 
 namespace Super50BrosGame
@@ -46,9 +47,15 @@ namespace Super50BrosGame
             return Task.CompletedTask;
         }
 
-        public void Render()
+        public void Render(int camX, int camY)
         {
-            Super50Bros.Instance.Graphics.Draw(Super50Bros.Instance.Textures[Texture], Super50Bros.Instance.Frames[Texture][Frame], X, Y);
+            var gameObjectBox = new Box((int)X, (int)Y, Width, Height);
+            var screenBox = new Box(camX, camY, Super50Bros.Instance.VirtualWidth, Super50Bros.Instance.VirtualHeight);
+
+            if (gameObjectBox.Intersect(screenBox))
+            {
+                Super50Bros.Instance.Graphics.Draw(Super50Bros.Instance.Textures[Texture], Super50Bros.Instance.Frames[Texture][Frame], X, Y);
+            }
         }
     }
 }

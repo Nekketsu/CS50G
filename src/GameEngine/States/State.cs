@@ -35,5 +35,10 @@ namespace GameEngine.States
         {
             return Task.CompletedTask;
         }
+
+        public virtual Task ProcessAI(Dictionary<string, object> parameters, TimeSpan dt)
+        {
+            return Task.CompletedTask;
+        }
     }
 }

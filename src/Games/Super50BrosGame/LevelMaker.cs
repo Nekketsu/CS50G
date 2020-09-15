@@ -111,7 +111,7 @@ namespace Super50BrosGame
                                     {
                                         var gem = new GameObject(
                                             "gems",
-                                            x * Super50Bros.Instance.TileSize,
+                                            obj.X,
                                             (blockHeight - 1) * Super50Bros.Instance.TileSize - 4,
                                             16,
                                             16,
@@ -129,6 +129,7 @@ namespace Super50BrosGame
                                         );
 
                                         // make the gem move up from the block and play a sound
+                                        Console.WriteLine($"Gem: ({gem.X}, {gem.Y}), {(blockHeight - 2) * Super50Bros.Instance.TileSize}");
                                         Super50Bros.Instance.Timer.Tween(TimeSpan.FromSeconds(0.1), gem.Y, (blockHeight - 2) * Super50Bros.Instance.TileSize, value => gem.Y = value);
                                         await Super50Bros.Instance.Sounds["powerup-reveal"].Play();
 

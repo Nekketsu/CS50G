@@ -53,6 +53,7 @@ namespace Super50BrosGame.States.Entity
                 }
 
                 Player.Y = tileBottomLeft.Y * Super50Bros.Instance.TileSize - Player.Height;
+                Console.WriteLine($"Player.Y: {Player.Y}");
             }
             // go back to start if we fall below the map boundary
             else if (Player.Y > Super50Bros.Instance.VirtualHeight)

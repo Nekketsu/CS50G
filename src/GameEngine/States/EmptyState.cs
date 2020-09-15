@@ -26,5 +26,10 @@ namespace GameEngine.States
         {
             return Task.CompletedTask;
         }
+
+        public override Task ProcessAI(Dictionary<string, object> parameters, TimeSpan dt)
+        {
+            return Task.CompletedTask;
+        }
     }
 }
