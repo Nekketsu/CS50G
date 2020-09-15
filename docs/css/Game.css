@@ -1,0 +1,44 @@
+﻿body {
+    height: 100%;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+}
+
+canvas.fullscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+ul.snapshots {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+ul.snapshots li {
+    display: inline-block;
+}
+
+ul.snapshots li.selected {
+    border: 5px solid blue;
+}
+
+ul.snapshots img {
+    width: 100%;
+    height: auto;
+}
+
+ul.snapshots .nav-link {
+    padding: 0;
+}
