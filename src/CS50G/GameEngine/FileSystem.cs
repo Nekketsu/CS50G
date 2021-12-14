@@ -1,7 +1,5 @@
 ﻿using GameEngine;
 using Microsoft.JSInterop;
-using System;
-using System.Threading.Tasks;
 
 namespace CS50G.GameEngine
 {

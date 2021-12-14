@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace GameEngine.Events
+﻿namespace GameEngine.Events
 {
     public class Event
     {

@@ -3,9 +3,6 @@ using CS50G.Services;
 using GameEngine;
 using GameEngine.Input;
 using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace CS50G.Components
 {

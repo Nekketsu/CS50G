@@ -1,6 +1,4 @@
 ﻿using GameEngine;
-using System;
-using System.Threading.Tasks;
 
 namespace Super50BrosGame
 {

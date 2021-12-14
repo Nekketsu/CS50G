@@ -1,9 +1,6 @@
 ﻿using GameEngine.States;
 using Super50BrosGame.States.Entity;
 using Super50BrosGame.States.Entity.Snail;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Super50BrosGame.States.Game
 {

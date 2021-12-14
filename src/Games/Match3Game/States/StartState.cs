@@ -2,9 +2,6 @@
 using GameEngine.Input;
 using GameEngine.States;
 using GameEngine.Timers;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Match3Game.States
 {

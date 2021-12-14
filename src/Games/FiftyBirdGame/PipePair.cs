@@ -1,7 +1,4 @@
 ﻿using FiftyBirdGame.States;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace FiftyBirdGame
 {

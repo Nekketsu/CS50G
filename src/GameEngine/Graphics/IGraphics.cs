@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace GameEngine.Graphics
+﻿namespace GameEngine.Graphics
 {
     public interface IGraphics
     {

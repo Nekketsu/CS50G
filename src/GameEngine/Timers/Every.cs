@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GameEngine.Timers
+﻿namespace GameEngine.Timers
 {
     public class Every
     {

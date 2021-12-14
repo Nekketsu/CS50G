@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace Super50BrosGame
+﻿namespace Super50BrosGame
 {
     // GameLevel Class
     public class GameLevel

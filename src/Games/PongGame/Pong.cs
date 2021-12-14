@@ -2,8 +2,6 @@
 using GameEngine.Audio;
 using GameEngine.Graphics;
 using GameEngine.Input;
-using System;
-using System.Threading.Tasks;
 
 namespace PongGame
 {

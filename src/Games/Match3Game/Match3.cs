@@ -5,9 +5,6 @@ using GameEngine.Input;
 using GameEngine.States;
 using GameEngine.Timers;
 using Match3Game.States;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Match3Game
 {
@@ -34,7 +31,7 @@ namespace Match3Game
         public Dictionary<string, Quad[][]> Frames { get; private set; }
         public StateMachine StateMachine { get; private set; }
 
-        public Timer Timer { get; private set; }
+        public GameEngine.Timers.Timer Timer { get; private set; }
 
         double backgroundX;
 
@@ -75,7 +72,7 @@ namespace Match3Game
             Sounds["music"].Looping = true;
             await Sounds["music"].Play();
 
-            Timer = new Timer();
+            Timer = new GameEngine.Timers.Timer();
 
             // initialize state machine with all state-returning functions
             StateMachine = new StateMachine(new Dictionary<string, State>

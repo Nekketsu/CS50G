@@ -1,5 +1,4 @@
 ﻿using GameEngine.Graphics;
-using System;
 
 namespace PongGame
 {

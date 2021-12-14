@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace GameEngine.Input
+﻿namespace GameEngine.Input
 {
     public class StatefulKeyboard : IKeyboard
     {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-
-namespace GameEngine.Timers
+﻿namespace GameEngine.Timers
 {
     public class Tween
     {

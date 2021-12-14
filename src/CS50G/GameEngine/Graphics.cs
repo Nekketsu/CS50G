@@ -2,11 +2,7 @@
 using GameEngine.Graphics;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace CS50G.GameEngine
 {

@@ -2,9 +2,6 @@
 using CS50G.Services;
 using GameEngine.Input;
 using Microsoft.AspNetCore.Components;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CS50G.Pages
 {

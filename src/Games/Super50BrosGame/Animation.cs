@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Super50BrosGame
+﻿namespace Super50BrosGame
 {
     // Animation Class
     public class Animation

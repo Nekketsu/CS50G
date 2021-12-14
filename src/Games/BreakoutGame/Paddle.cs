@@ -1,5 +1,4 @@
 ﻿using GameEngine.Input;
-using System;
 
 namespace BreakoutGame
 {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace GameEngine.Timers
+﻿namespace GameEngine.Timers
 {
     public class Timer
     {

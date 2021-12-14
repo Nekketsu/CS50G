@@ -1,6 +1,5 @@
 ﻿using GameEngine;
 using GameEngine.States;
-using System;
 
 namespace Super50BrosGame
 {

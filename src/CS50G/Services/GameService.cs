@@ -2,9 +2,6 @@
 using GameEngine.Audio;
 using GameEngine.Graphics;
 using GameEngine.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace CS50G.Services
 {

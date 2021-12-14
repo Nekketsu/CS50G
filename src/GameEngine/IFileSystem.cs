@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace GameEngine
+﻿namespace GameEngine
 {
     public interface IFileSystem
     {

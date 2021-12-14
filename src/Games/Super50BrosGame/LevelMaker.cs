@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Super50BrosGame
+﻿namespace Super50BrosGame
 {
     // LevelMaker Class
     public class LevelMaker

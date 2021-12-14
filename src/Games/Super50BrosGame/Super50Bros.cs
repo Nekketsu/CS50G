@@ -5,10 +5,6 @@ using GameEngine.Input;
 using GameEngine.States;
 using GameEngine.Timers;
 using Super50BrosGame.States.Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Super50BrosGame
 {
@@ -99,7 +95,7 @@ namespace Super50BrosGame
         public Dictionary<string, Quad[][]> FrameSets { get; private set; }
         public StateMachine StateMachine { get; private set; }
 
-        public Timer Timer { get; private set; }
+        public GameEngine.Timers.Timer Timer { get; private set; }
 
         public override async Task Load()
         {
@@ -152,7 +148,7 @@ namespace Super50BrosGame
                 ["title"] = await Graphics.NewFont("fonts/ArcadeAlternate.ttf", 32),
             };
 
-            Timer = new Timer();
+            Timer = new GameEngine.Timers.Timer();
 
             StateMachine = new StateMachine(new Dictionary<string, State>
             {

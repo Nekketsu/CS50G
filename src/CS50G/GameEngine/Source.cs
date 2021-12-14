@@ -1,6 +1,5 @@
 ﻿using GameEngine.Audio;
 using Microsoft.JSInterop;
-using System.Threading.Tasks;
 
 namespace CS50G.GameEngine
 {

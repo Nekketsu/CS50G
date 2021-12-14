@@ -4,9 +4,6 @@ using GameEngine.Audio;
 using GameEngine.Graphics;
 using GameEngine.Input;
 using GameEngine.States;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace FiftyBirdGame
 {

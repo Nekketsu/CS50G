@@ -1,8 +1,6 @@
 ﻿using FiftyBirdGame.States;
 using GameEngine.Graphics;
 using GameEngine.Input;
-using System;
-using System.Threading.Tasks;
 
 namespace FiftyBirdGame
 {

@@ -1,10 +1,6 @@
 ﻿using GameEngine.Graphics;
 using GameEngine.Input;
 using GameEngine.States;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Match3Game.States
 {

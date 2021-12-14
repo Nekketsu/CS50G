@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace GameEngine.Audio
+﻿namespace GameEngine.Audio
 {
     public interface IAudio
     {

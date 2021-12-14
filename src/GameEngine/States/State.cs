@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace GameEngine.States
+﻿namespace GameEngine.States
 {
     // BaseState Class
 
